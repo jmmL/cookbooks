@@ -1,0 +1,254 @@
+---
+layout: default
+title: Cookbook Index
+---
+
+<div class="app-container">
+  <!-- Header -->
+  <header class="app-header">
+    <h1 class="app-title">Cookbook Index</h1>
+    <p class="app-subtitle">Browse recipes from your cookbook collection</p>
+  </header>
+
+  <!-- Controls Bar -->
+  <div class="controls-bar">
+    <!-- Search -->
+    <div class="search-container">
+      <input type="text" id="search-input" class="search-input" placeholder="Search recipes..." aria-label="Search recipes">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+      <button id="toggle-filters" class="btn btn-secondary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+        </svg>
+        <span>Filters</span>
+        <span id="active-filter-count" class="filter-badge hidden">0</span>
+      </button>
+      <button id="toggle-favorites" class="btn btn-secondary" aria-label="Show favorites only">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+        <span class="btn-text">Favorites</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Filter Panel -->
+  <div id="filter-panel" class="filter-panel hidden">
+    <div class="filter-panel-header">
+      <h2>Filter Recipes</h2>
+      <div class="filter-logic-toggle">
+        <label class="toggle-label">
+          <span>Match</span>
+          <button id="filter-logic-toggle" class="logic-toggle" data-logic="and">
+            <span class="logic-option active" data-value="and">ALL</span>
+            <span class="logic-option" data-value="or">ANY</span>
+          </button>
+          <span>filters</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="filter-groups">
+      <!-- Book Filter -->
+      <div class="filter-group">
+        <h3 class="filter-group-title">Book</h3>
+        <div id="filter-books" class="filter-options"></div>
+      </div>
+
+      <!-- Cuisine Filter -->
+      <div class="filter-group">
+        <h3 class="filter-group-title">Cuisine</h3>
+        <div id="filter-cuisines" class="filter-options"></div>
+      </div>
+
+      <!-- Theme Filter -->
+      <div class="filter-group">
+        <h3 class="filter-group-title">Theme</h3>
+        <div id="filter-themes" class="filter-options"></div>
+      </div>
+
+      <!-- Protein Filter -->
+      <div class="filter-group">
+        <h3 class="filter-group-title">Protein</h3>
+        <div id="filter-proteins" class="filter-options"></div>
+      </div>
+
+      <!-- Carbohydrate Filter -->
+      <div class="filter-group">
+        <h3 class="filter-group-title">Carbohydrate</h3>
+        <div id="filter-carbs" class="filter-options"></div>
+      </div>
+
+      <!-- Other Ingredients (Free Text) -->
+      <div class="filter-group">
+        <h3 class="filter-group-title">Other Ingredients</h3>
+        <input type="text" id="filter-ingredients" class="filter-text-input" placeholder="e.g., garlic, ginger...">
+      </div>
+
+      <!-- Difficulty Filter -->
+      <div class="filter-group">
+        <h3 class="filter-group-title">Difficulty</h3>
+        <div id="filter-difficulty" class="filter-options">
+          <label class="filter-checkbox">
+            <input type="checkbox" value="easy"> Easy
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" value="medium"> Medium
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" value="hard"> Hard
+          </label>
+        </div>
+      </div>
+
+      <!-- Seasonality Filter -->
+      <div class="filter-group">
+        <h3 class="filter-group-title">Season</h3>
+        <div id="filter-seasons" class="filter-options">
+          <label class="filter-checkbox">
+            <input type="checkbox" value="Spring"> Spring
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" value="Summer"> Summer
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" value="Autumn"> Autumn
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" value="Winter"> Winter
+          </label>
+        </div>
+      </div>
+
+      <!-- Time Filter -->
+      <div class="filter-group">
+        <h3 class="filter-group-title">Max Total Time</h3>
+        <div class="time-filter">
+          <input type="range" id="filter-time" min="0" max="1500" value="1500" step="15" aria-label="Maximum total cooking time">
+          <span id="filter-time-display" aria-live="polite">Any</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-actions">
+      <button id="clear-filters" class="btn btn-ghost">Clear All</button>
+    </div>
+  </div>
+
+  <!-- Sort Bar -->
+  <div class="sort-bar">
+    <div class="results-count">
+      <span id="results-count">0</span> recipes
+    </div>
+    <div class="sort-controls">
+      <label for="sort-select">Sort by:</label>
+      <select id="sort-select" class="sort-select">
+        <option value="name">Name</option>
+        <option value="book">Book</option>
+        <option value="total_time">Total Time</option>
+        <option value="active_time">Active Time</option>
+        <option value="difficulty">Difficulty</option>
+        <option value="page">Page Number</option>
+      </select>
+      <button id="sort-direction" class="sort-direction-btn" data-direction="asc" aria-label="Sort ascending">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M5 12l7-7 7 7"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="language-toggle">
+      <label for="language-select">Display:</label>
+      <select id="language-select" class="language-select">
+        <option value="en">English</option>
+        <option value="zh_hanzi">Chinese (Hanzi)</option>
+        <option value="zh_pinyin">Chinese (Pinyin)</option>
+        <option value="ja_kanji">Japanese (Kanji)</option>
+        <option value="ja_romaji">Japanese (Romaji)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Recipe List -->
+  <main class="recipe-list" id="recipe-list" role="list">
+    <!-- Recipes will be rendered here by JavaScript -->
+  </main>
+
+  <!-- Empty State -->
+  <div id="empty-state" class="empty-state hidden">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+    </svg>
+    <h2>No recipes found</h2>
+    <p>Try adjusting your filters or search terms</p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <p>Cookbook Index &mdash; A household recipe browser</p>
+  </footer>
+</div>
+
+<!-- Recipe Card Template (hidden, used by JS) -->
+<template id="recipe-item-template">
+  <article class="recipe-item" role="listitem">
+    <div class="recipe-item-header">
+      <div class="recipe-item-title-row">
+        <button class="favorite-btn" aria-label="Toggle favorite">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </button>
+        <h2 class="recipe-name"></h2>
+        <span class="recipe-alt-names"></span>
+      </div>
+      <div class="recipe-meta">
+        <span class="recipe-book"></span>
+        <span class="recipe-page"></span>
+      </div>
+      <button class="expand-btn" aria-label="Expand recipe details">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+    </div>
+    <div class="recipe-item-details hidden">
+      <div class="recipe-details-grid">
+        <div class="detail-group">
+          <span class="detail-label">Cuisine</span>
+          <span class="detail-value recipe-cuisine"></span>
+        </div>
+        <div class="detail-group">
+          <span class="detail-label">Theme</span>
+          <span class="detail-value recipe-theme"></span>
+        </div>
+        <div class="detail-group">
+          <span class="detail-label">Total Time</span>
+          <span class="detail-value recipe-total-time"></span>
+        </div>
+        <div class="detail-group">
+          <span class="detail-label">Active Time</span>
+          <span class="detail-value recipe-active-time"></span>
+        </div>
+        <div class="detail-group">
+          <span class="detail-label">Difficulty</span>
+          <span class="detail-value recipe-difficulty"></span>
+        </div>
+        <div class="detail-group">
+          <span class="detail-label">Season</span>
+          <span class="detail-value recipe-season"></span>
+        </div>
+      </div>
+      <div class="recipe-ingredients">
+        <span class="detail-label">Ingredients</span>
+        <div class="ingredients-list"></div>
+      </div>
+    </div>
+  </article>
+</template>
