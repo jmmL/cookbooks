@@ -9,6 +9,23 @@
   'use strict';
 
   // ===========================================
+  // GLOBAL ERROR HANDLER
+  // ===========================================
+  // Catch uncaught errors and display them visibly (helpful for mobile debugging)
+  window.onerror = function(message, source, lineno, colno, _error) {
+    console.error('Uncaught error:', message, 'at', source, lineno, colno);
+    var errorDiv = document.getElementById('js-error-display');
+    if (!errorDiv) {
+      errorDiv = document.createElement('div');
+      errorDiv.id = 'js-error-display';
+      errorDiv.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#fecaca;color:#991b1b;padding:1rem;z-index:9999;font-family:monospace;font-size:12px;';
+      document.body.insertBefore(errorDiv, document.body.firstChild);
+    }
+    errorDiv.innerHTML += '<div><strong>Error:</strong> ' + message + ' (line ' + lineno + ')</div>';
+    return false;
+  };
+
+  // ===========================================
   // CONFIGURATION
   // ===========================================
   const CONFIG = {
@@ -180,6 +197,9 @@
       // Cache DOM elements
       cacheElements();
 
+      // Verify critical elements exist
+      verifyCriticalElements();
+
       // Build filter options
       buildFilterOptions();
 
@@ -198,7 +218,36 @@
       }
     } catch (error) {
       console.error('Failed to initialize Cookbook Index:', error);
-      showErrorState('Failed to load recipes. Please refresh the page.');
+      showErrorState('Failed to load recipes: ' + (error.message || 'Unknown error'));
+    }
+  }
+
+  /**
+   * Verify that critical DOM elements exist before proceeding
+   * This helps diagnose issues on mobile browsers
+   */
+  function verifyCriticalElements() {
+    const critical = [
+      ['recipeList', 'recipe-list'],
+      ['recipeTemplate', 'recipe-item-template'],
+      ['searchInput', 'search-input'],
+      ['resultsCount', 'results-count']
+    ];
+
+    const missing = [];
+    for (const [key, id] of critical) {
+      if (!elements[key]) {
+        missing.push(id);
+      }
+    }
+
+    if (missing.length > 0) {
+      throw new Error('Missing critical DOM elements: ' + missing.join(', '));
+    }
+
+    // Verify template has content (Safari/WebKit compatibility check)
+    if (!elements.recipeTemplate.content) {
+      throw new Error('Template element does not support .content property');
     }
   }
 
@@ -983,10 +1032,37 @@
   }
 
   function showErrorState(message) {
-    elements.recipeList.innerHTML = '';
-    elements.emptyState.classList.remove('hidden');
-    elements.emptyState.querySelector('h2').textContent = 'Error';
-    elements.emptyState.querySelector('p').textContent = message;
+    // Try to use the existing empty state element
+    const emptyState = elements.emptyState || document.getElementById('empty-state');
+    const recipeList = elements.recipeList || document.getElementById('recipe-list');
+
+    if (recipeList) {
+      recipeList.innerHTML = '';
+      recipeList.classList.add('hidden');
+    }
+
+    if (emptyState) {
+      emptyState.classList.remove('hidden');
+      const h2 = emptyState.querySelector('h2');
+      const p = emptyState.querySelector('p');
+      if (h2) h2.textContent = 'Error';
+      if (p) p.textContent = message;
+    } else {
+      // Fallback: create an error message if empty state doesn't exist
+      const errorDiv = document.createElement('div');
+      errorDiv.style.cssText = 'padding: 2rem; text-align: center; color: #dc2626;';
+      errorDiv.innerHTML = '<h2>Error</h2><p>' + escapeHtml(message) + '</p>';
+      document.body.appendChild(errorDiv);
+    }
+  }
+
+  /**
+   * Escape HTML to prevent XSS in error messages
+   */
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
   }
 
   // ===========================================

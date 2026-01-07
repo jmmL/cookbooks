@@ -2,7 +2,8 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "jest": true
+    "jest": true,
+    "node": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
@@ -17,5 +18,17 @@
   },
   "globals": {
     "CookbookApp": "writable"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["e2e/**/*.js", "playwright.config.js"],
+      "env": {
+        "node": true,
+        "browser": false
+      },
+      "parserOptions": {
+        "sourceType": "commonjs"
+      }
+    }
+  ]
 }
