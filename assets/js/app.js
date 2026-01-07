@@ -743,9 +743,10 @@
 
   function matchesSearch(recipe, searchTerm) {
     // Search in all language variants of the name
+    const normalizedSearch = searchTerm.toLowerCase();
     const names = Object.values(recipe.name || {});
     for (const name of names) {
-      if (name && name.toLowerCase().includes(searchTerm)) {
+      if (name && name.toLowerCase().includes(normalizedSearch)) {
         return true;
       }
     }
