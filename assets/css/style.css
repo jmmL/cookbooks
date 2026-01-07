@@ -352,17 +352,33 @@ input, select {
   border-color: var(--color-text-muted);
 }
 
-.filter-checkbox:has(input:checked) {
+/* Fallback for browsers without :has() support */
+.filter-checkbox.checked {
   background: var(--color-primary-bg);
   border-color: var(--color-primary);
   color: var(--color-primary);
 }
 
+/* Modern browsers with :has() support */
+@supports selector(:has(*)) {
+  .filter-checkbox:has(input:checked) {
+    background: var(--color-primary-bg);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+}
+
 .filter-checkbox input {
-  width: 0;
-  height: 0;
-  opacity: 0;
+  /* Visually hide but keep accessible */
   position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .filter-text-input {
@@ -834,4 +850,64 @@ input, select {
 /* Book color backgrounds (applied via JS) */
 .recipe-item[data-book-color] {
   background: linear-gradient(135deg, var(--book-color) 0%, var(--color-surface) 100%);
+}
+
+/* Virtual scrolling spacers */
+.virtual-scroll-spacer {
+  flex-shrink: 0;
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus styles for accessibility */
+.recipe-item:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.recipe-item:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.recipe-item:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: white;
+  padding: var(--space-sm) var(--space-md);
+  z-index: 1000;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
