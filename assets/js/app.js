@@ -567,7 +567,7 @@
     updateVirtualScroll();
   }
 
-  function toggleFavorite(recipeId, btn, recipeItem) {
+  function toggleFavorite(recipeId, btn, _recipeItem) {
     const isNowFavorite = !state.favorites.has(recipeId);
 
     if (isNowFavorite) {
@@ -777,11 +777,12 @@
           valueA = a.active_time_mins;
           valueB = b.active_time_mins;
           break;
-        case 'difficulty':
+        case 'difficulty': {
           const difficultyOrder = { easy: 1, medium: 2, hard: 3 };
           valueA = difficultyOrder[a.difficulty] || 0;
           valueB = difficultyOrder[b.difficulty] || 0;
           break;
+        }
         case 'page':
           valueA = a.page;
           valueB = b.page;
