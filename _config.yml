@@ -1,0 +1,27 @@
+title: Cookbook Index
+description: An index of recipes across cookbooks for easy reference
+baseurl: "" # GitHub Pages will set this automatically
+url: "" # GitHub Pages will set this automatically
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Include data files
+include:
+  - _data
+
+# Default settings
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"

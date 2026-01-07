@@ -1,0 +1,37 @@
+[
+  {
+    "id": "every-grain-of-rice",
+    "title": "Every Grain of Rice",
+    "author": "Fuchsia Dunlop",
+    "cuisine": "Chinese",
+    "color": "#4a90a4"
+  },
+  {
+    "id": "land-of-fish-and-rice",
+    "title": "The Land of Fish and Rice",
+    "author": "Fuchsia Dunlop",
+    "cuisine": "Chinese (Jiangnan)",
+    "color": "#7eb5a6"
+  },
+  {
+    "id": "ottolenghi-simple",
+    "title": "Ottolenghi Simple",
+    "author": "Yotam Ottolenghi",
+    "cuisine": "Middle Eastern / Mediterranean",
+    "color": "#e8c547"
+  },
+  {
+    "id": "salt-fat-acid-heat",
+    "title": "Salt, Fat, Acid, Heat",
+    "author": "Samin Nosrat",
+    "cuisine": "Global",
+    "color": "#d4847c"
+  },
+  {
+    "id": "japanese-home-cooking",
+    "title": "Japanese Home Cooking",
+    "author": "Sonoko Sakai",
+    "cuisine": "Japanese",
+    "color": "#8b7355"
+  }
+]

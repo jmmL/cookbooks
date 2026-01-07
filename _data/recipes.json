@@ -1,0 +1,390 @@
+[
+  {
+    "id": "kung-pao-chicken",
+    "name": {
+      "en": "Kung Pao Chicken",
+      "zh_hanzi": "宫保鸡丁",
+      "zh_pinyin": "Gōng Bǎo Jī Dīng"
+    },
+    "book_id": "every-grain-of-rice",
+    "page": 142,
+    "theme": ["Meat", "Poultry"],
+    "total_time_mins": 45,
+    "active_time_mins": 25,
+    "difficulty": "medium",
+    "ingredients": {
+      "protein": ["Chicken"],
+      "carbohydrate": [],
+      "other": ["peanuts", "dried chillies", "Sichuan peppercorns", "spring onions", "ginger", "garlic"]
+    },
+    "seasonality": ["Spring", "Summer", "Autumn", "Winter"]
+  },
+  {
+    "id": "mapo-tofu",
+    "name": {
+      "en": "Mapo Tofu",
+      "zh_hanzi": "麻婆豆腐",
+      "zh_pinyin": "Má Pó Dòu Fu"
+    },
+    "book_id": "every-grain-of-rice",
+    "page": 78,
+    "theme": ["Tofu", "Vegetarian Option"],
+    "total_time_mins": 30,
+    "active_time_mins": 20,
+    "difficulty": "easy",
+    "ingredients": {
+      "protein": ["Tofu", "Pork"],
+      "carbohydrate": [],
+      "other": ["doubanjiang", "fermented black beans", "Sichuan peppercorns", "spring onions", "ginger", "garlic"]
+    },
+    "seasonality": ["Spring", "Summer", "Autumn", "Winter"]
+  },
+  {
+    "id": "fish-fragrant-eggplant",
+    "name": {
+      "en": "Fish-Fragrant Eggplant",
+      "zh_hanzi": "鱼香茄子",
+      "zh_pinyin": "Yú Xiāng Qié Zi"
+    },
+    "book_id": "every-grain-of-rice",
+    "page": 156,
+    "theme": ["Vegetable", "Vegetarian"],
+    "total_time_mins": 35,
+    "active_time_mins": 25,
+    "difficulty": "medium",
+    "ingredients": {
+      "protein": [],
+      "carbohydrate": [],
+      "other": ["eggplant", "doubanjiang", "pickled chillies", "spring onions", "ginger", "garlic", "vinegar", "sugar"]
+    },
+    "seasonality": ["Summer", "Autumn"]
+  },
+  {
+    "id": "drunken-chicken",
+    "name": {
+      "en": "Drunken Chicken",
+      "zh_hanzi": "醉鸡",
+      "zh_pinyin": "Zuì Jī"
+    },
+    "book_id": "land-of-fish-and-rice",
+    "page": 89,
+    "theme": ["Meat", "Poultry", "Cold Dish", "Starter"],
+    "total_time_mins": 480,
+    "active_time_mins": 30,
+    "difficulty": "medium",
+    "ingredients": {
+      "protein": ["Chicken"],
+      "carbohydrate": [],
+      "other": ["Shaoxing wine", "goji berries", "spring onions", "ginger"]
+    },
+    "seasonality": ["Summer"]
+  },
+  {
+    "id": "west-lake-fish",
+    "name": {
+      "en": "West Lake Fish in Vinegar Gravy",
+      "zh_hanzi": "西湖醋鱼",
+      "zh_pinyin": "Xī Hú Cù Yú"
+    },
+    "book_id": "land-of-fish-and-rice",
+    "page": 134,
+    "theme": ["Fish", "Seafood"],
+    "total_time_mins": 40,
+    "active_time_mins": 30,
+    "difficulty": "hard",
+    "ingredients": {
+      "protein": ["Fish"],
+      "carbohydrate": [],
+      "other": ["black vinegar", "sugar", "ginger", "spring onions"]
+    },
+    "seasonality": ["Spring", "Summer", "Autumn", "Winter"]
+  },
+  {
+    "id": "red-braised-pork",
+    "name": {
+      "en": "Red-Braised Pork",
+      "zh_hanzi": "红烧肉",
+      "zh_pinyin": "Hóng Shāo Ròu"
+    },
+    "book_id": "land-of-fish-and-rice",
+    "page": 168,
+    "theme": ["Meat", "Pork"],
+    "total_time_mins": 150,
+    "active_time_mins": 30,
+    "difficulty": "medium",
+    "ingredients": {
+      "protein": ["Pork"],
+      "carbohydrate": [],
+      "other": ["rock sugar", "Shaoxing wine", "soy sauce", "ginger", "star anise"]
+    },
+    "seasonality": ["Autumn", "Winter"]
+  },
+  {
+    "id": "lion-head-meatballs",
+    "name": {
+      "en": "Lion's Head Meatballs",
+      "zh_hanzi": "狮子头",
+      "zh_pinyin": "Shī Zi Tóu"
+    },
+    "book_id": "land-of-fish-and-rice",
+    "page": 185,
+    "theme": ["Meat", "Pork"],
+    "total_time_mins": 120,
+    "active_time_mins": 45,
+    "difficulty": "medium",
+    "ingredients": {
+      "protein": ["Pork"],
+      "carbohydrate": [],
+      "other": ["napa cabbage", "ginger", "Shaoxing wine", "soy sauce", "water chestnuts"]
+    },
+    "seasonality": ["Winter"]
+  },
+  {
+    "id": "cauliflower-cake",
+    "name": {
+      "en": "Whole Roasted Cauliflower"
+    },
+    "book_id": "ottolenghi-simple",
+    "page": 112,
+    "theme": ["Vegetable", "Vegetarian", "Side"],
+    "total_time_mins": 90,
+    "active_time_mins": 20,
+    "difficulty": "easy",
+    "ingredients": {
+      "protein": [],
+      "carbohydrate": [],
+      "other": ["cauliflower", "tahini", "lemon", "parsley", "za'atar"]
+    },
+    "seasonality": ["Autumn", "Winter"]
+  },
+  {
+    "id": "lamb-arayes",
+    "name": {
+      "en": "Lamb Arayes"
+    },
+    "book_id": "ottolenghi-simple",
+    "page": 201,
+    "theme": ["Meat", "Lamb"],
+    "total_time_mins": 45,
+    "active_time_mins": 30,
+    "difficulty": "easy",
+    "ingredients": {
+      "protein": ["Lamb"],
+      "carbohydrate": ["Bread"],
+      "other": ["onion", "parsley", "cumin", "cinnamon", "yogurt"]
+    },
+    "seasonality": ["Spring", "Summer", "Autumn", "Winter"]
+  },
+  {
+    "id": "harissa-salmon",
+    "name": {
+      "en": "Harissa Salmon with Couscous"
+    },
+    "book_id": "ottolenghi-simple",
+    "page": 156,
+    "theme": ["Fish", "Seafood"],
+    "total_time_mins": 35,
+    "active_time_mins": 20,
+    "difficulty": "easy",
+    "ingredients": {
+      "protein": ["Salmon"],
+      "carbohydrate": ["Couscous"],
+      "other": ["harissa", "preserved lemon", "dill", "capers"]
+    },
+    "seasonality": ["Spring", "Summer"]
+  },
+  {
+    "id": "buttermilk-roast-chicken",
+    "name": {
+      "en": "Buttermilk Roast Chicken"
+    },
+    "book_id": "salt-fat-acid-heat",
+    "page": 234,
+    "theme": ["Meat", "Poultry"],
+    "total_time_mins": 1500,
+    "active_time_mins": 30,
+    "difficulty": "easy",
+    "ingredients": {
+      "protein": ["Chicken"],
+      "carbohydrate": [],
+      "other": ["buttermilk", "garlic", "herbs", "lemon"]
+    },
+    "seasonality": ["Spring", "Summer", "Autumn", "Winter"]
+  },
+  {
+    "id": "pasta-cacio-pepe",
+    "name": {
+      "en": "Pasta Cacio e Pepe"
+    },
+    "book_id": "salt-fat-acid-heat",
+    "page": 189,
+    "theme": ["Pasta", "Vegetarian"],
+    "total_time_mins": 25,
+    "active_time_mins": 20,
+    "difficulty": "medium",
+    "ingredients": {
+      "protein": [],
+      "carbohydrate": ["Pasta"],
+      "other": ["pecorino romano", "black pepper"]
+    },
+    "seasonality": ["Spring", "Summer", "Autumn", "Winter"]
+  },
+  {
+    "id": "miso-soup",
+    "name": {
+      "en": "Miso Soup",
+      "ja_kanji": "味噌汁",
+      "ja_romaji": "Misoshiru"
+    },
+    "book_id": "japanese-home-cooking",
+    "page": 45,
+    "theme": ["Soup", "Starter", "Vegetarian"],
+    "total_time_mins": 20,
+    "active_time_mins": 15,
+    "difficulty": "easy",
+    "ingredients": {
+      "protein": ["Tofu"],
+      "carbohydrate": [],
+      "other": ["miso paste", "dashi", "wakame", "spring onions"]
+    },
+    "seasonality": ["Spring", "Summer", "Autumn", "Winter"]
+  },
+  {
+    "id": "gyudon",
+    "name": {
+      "en": "Beef Rice Bowl",
+      "ja_kanji": "牛丼",
+      "ja_romaji": "Gyūdon"
+    },
+    "book_id": "japanese-home-cooking",
+    "page": 112,
+    "theme": ["Meat", "Beef", "Rice Bowl"],
+    "total_time_mins": 30,
+    "active_time_mins": 25,
+    "difficulty": "easy",
+    "ingredients": {
+      "protein": ["Beef"],
+      "carbohydrate": ["Rice"],
+      "other": ["onion", "dashi", "soy sauce", "mirin", "sake", "pickled ginger"]
+    },
+    "seasonality": ["Spring", "Summer", "Autumn", "Winter"]
+  },
+  {
+    "id": "salmon-teriyaki",
+    "name": {
+      "en": "Salmon Teriyaki",
+      "ja_kanji": "鮭の照り焼き",
+      "ja_romaji": "Sake no Teriyaki"
+    },
+    "book_id": "japanese-home-cooking",
+    "page": 145,
+    "theme": ["Fish", "Seafood"],
+    "total_time_mins": 25,
+    "active_time_mins": 20,
+    "difficulty": "easy",
+    "ingredients": {
+      "protein": ["Salmon"],
+      "carbohydrate": [],
+      "other": ["soy sauce", "mirin", "sake", "sugar", "ginger"]
+    },
+    "seasonality": ["Autumn", "Winter"]
+  },
+  {
+    "id": "spring-rolls",
+    "name": {
+      "en": "Spring Rolls",
+      "zh_hanzi": "春卷",
+      "zh_pinyin": "Chūn Juǎn"
+    },
+    "book_id": "every-grain-of-rice",
+    "page": 52,
+    "theme": ["Starter", "Snack"],
+    "total_time_mins": 60,
+    "active_time_mins": 45,
+    "difficulty": "medium",
+    "ingredients": {
+      "protein": ["Pork"],
+      "carbohydrate": [],
+      "other": ["spring roll wrappers", "napa cabbage", "shiitake mushrooms", "bean sprouts", "spring onions"]
+    },
+    "seasonality": ["Spring"]
+  },
+  {
+    "id": "tangyuan",
+    "name": {
+      "en": "Sweet Rice Balls",
+      "zh_hanzi": "汤圆",
+      "zh_pinyin": "Tāng Yuán"
+    },
+    "book_id": "every-grain-of-rice",
+    "page": 245,
+    "theme": ["Dessert", "Sweet"],
+    "total_time_mins": 45,
+    "active_time_mins": 35,
+    "difficulty": "medium",
+    "ingredients": {
+      "protein": [],
+      "carbohydrate": ["Glutinous Rice"],
+      "other": ["black sesame paste", "sugar", "ginger syrup"]
+    },
+    "seasonality": ["Winter"]
+  },
+  {
+    "id": "zongzi",
+    "name": {
+      "en": "Sticky Rice Wrapped in Bamboo Leaves",
+      "zh_hanzi": "粽子",
+      "zh_pinyin": "Zòng Zi"
+    },
+    "book_id": "land-of-fish-and-rice",
+    "page": 210,
+    "theme": ["Rice", "Snack"],
+    "total_time_mins": 300,
+    "active_time_mins": 90,
+    "difficulty": "hard",
+    "ingredients": {
+      "protein": ["Pork"],
+      "carbohydrate": ["Glutinous Rice"],
+      "other": ["bamboo leaves", "salted duck egg yolk", "soy sauce", "Shaoxing wine"]
+    },
+    "seasonality": ["Summer"]
+  },
+  {
+    "id": "cucumber-salad",
+    "name": {
+      "en": "Smashed Cucumber Salad",
+      "zh_hanzi": "拍黄瓜",
+      "zh_pinyin": "Pāi Huáng Guā"
+    },
+    "book_id": "every-grain-of-rice",
+    "page": 34,
+    "theme": ["Cold Dish", "Starter", "Vegetarian", "Vegetable"],
+    "total_time_mins": 15,
+    "active_time_mins": 10,
+    "difficulty": "easy",
+    "ingredients": {
+      "protein": [],
+      "carbohydrate": [],
+      "other": ["cucumber", "garlic", "sesame oil", "rice vinegar", "chilli oil"]
+    },
+    "seasonality": ["Summer"]
+  },
+  {
+    "id": "shakshuka",
+    "name": {
+      "en": "Shakshuka"
+    },
+    "book_id": "ottolenghi-simple",
+    "page": 78,
+    "theme": ["Eggs", "Breakfast", "Vegetarian"],
+    "total_time_mins": 35,
+    "active_time_mins": 25,
+    "difficulty": "easy",
+    "ingredients": {
+      "protein": ["Eggs"],
+      "carbohydrate": [],
+      "other": ["tomatoes", "bell peppers", "onion", "cumin", "paprika", "feta cheese"]
+    },
+    "seasonality": ["Spring", "Summer", "Autumn", "Winter"]
+  }
+]
