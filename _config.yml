@@ -1,6 +1,6 @@
 title: Cookbook Index
 description: An index of recipes across cookbooks for easy reference
-baseurl: "" # GitHub Pages will set this automatically
+baseurl: "/cookbooks" # Required for GitHub Pages project sites (username.github.io/cookbooks)
 url: "" # GitHub Pages will set this automatically
 
 # Build settings

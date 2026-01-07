@@ -19,6 +19,11 @@ Thumbs.db
 # Test coverage
 coverage/
 
+# Playwright
+playwright-report/
+playwright/.cache/
+test-results/
+
 # Logs
 *.log
 npm-debug.log*
